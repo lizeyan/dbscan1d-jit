@@ -1,0 +1,50 @@
+[tool.poetry]
+name = "dbscan1d-jit"
+version = "0.1.0"
+description = "A JIT-version of the dbscan1d package. dbscan1d is a 1D implementation of the DBSCAN algorithm. It was created to efficiently preform clustering on large 1D arrays."
+authors = ["Zeyan Li 李则言 <li_zeyan@icloud.com>"]
+license = "MIT"
+readme = "README.md"
+
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering",
+]
+
+keywords = ["geophysics", "distributed-acoustic-sensing"]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<4.0"
+numpy = "^1.26.4"
+numba = "^0.59.1"
+typing-extensions = "^4.11.0"
+
+
+[[tool.poetry.source]]
+name = "mirrors"
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+priority = "primary"
+
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.0"
+coverage = "^7.5.1"
+pytest-xdist = "^3.6.1"
+pytest-cov = "^5.0.0"
+scikit-learn = "^1.4.2"
+pandas = "^2.2.2"
+matplotlib = "^3.8.4"
+seaborn = "^0.13.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.coverage.run]
+relative_files = true
